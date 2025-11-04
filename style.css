@@ -1,0 +1,71 @@
+html{
+  cursor: url('cursor.png'), auto;
+
+}
+body{
+  font-family : 'Share Tech';
+  background-color: pink;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 600px;
+}
+p{
+  margin: 0;
+  text-align: center;
+  padding-top: 5px;
+  font-size: 23px;
+  color: rgb(243, 137, 154);
+}
+.card {
+  border: 2px solid rgb(253, 133, 203);
+  border-radius: 10px;
+}
+.nav-bar{
+background-color: rgb(253, 239, 195);
+align-items: start;
+height: 40px;
+}
+.nav-list{
+  background-color: rgb(255, 239, 239);
+  padding: 10px 10px 10px 10px;
+}
+.add-button{
+  background-color: rgb(108, 255, 108);
+  color: white;
+  border : none;
+  font-size: 15px;
+  border-radius: 22px;
+  cursor: url('cursor.png'), auto;
+}
+.delete-button{
+  background : rgb(243, 130, 130);
+  border: none;
+  color : white;
+  padding: 10px 0px ;
+  border-radius: 22px;
+  cursor: url('cursor.png');
+}
+.todo-grid,
+.todo-input-grid{
+  display : grid;
+  grid-template-columns: 200px 150px 100px;
+  column-gap:15px;
+  row-gap : 10px;
+  align-items: center;
+
+
+}
+.todo-input-grid{
+ align-items: stretch;
+ max-height: 300px;
+ overflow-y: auto;
+}
+
+.name-input, 
+.date-input{
+    font-family : 'Share Tech';
+ font-size: 15px;
+ padding: 6px;
+cursor: url('cursor.png'), auto;
+}
