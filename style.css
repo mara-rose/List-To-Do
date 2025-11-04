@@ -49,13 +49,12 @@ height: 40px;
 .todo-grid,
 .todo-input-grid{
   display : grid;
-  grid-template-columns: 200px 150px 100px;
+  grid-template-columns: 200px 150px 150px 100px;
   column-gap:15px;
   row-gap : 10px;
   align-items: center;
-
-
 }
+
 .todo-input-grid{
  align-items: stretch;
  max-height: 300px;

@@ -5,9 +5,12 @@ function AddToDo() {
   const name = inputElement.value;
   const dateInputElement = document.querySelector('.js-date-input');
   const date = dateInputElement.value;
+  const timeInputElement = document.querySelector('.js-time-input');
+  const time = timeInputElement.value;
   todoList.push({
     name: name,
-    dueDate: date
+    dueDate: date,
+    time: time
   });
   inputElement.value = '';
   renderTodoList();
@@ -18,9 +21,11 @@ function renderTodoList() {
     const todoObject = todoList[i];
     const { name } = todoObject;
     const dueDate = todoObject.dueDate;
+    const time = todoObject.time;
     const html = `
     <div>${name}</div>
     <div>${dueDate}</div>
+    <div>${time}</div>
     <button class="delete-button" onclick="
     todoList.splice(${i},1);
     renderTodoList();
