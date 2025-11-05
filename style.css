@@ -29,7 +29,7 @@ p{
 }
 .nav-bar{
 background-color: rgb(253, 239, 195);
-padding:0 ;
+padding:0;
 }
 .nav-list{
   background-color: rgb(255, 239, 239);
@@ -41,7 +41,7 @@ padding:0 ;
   border : none;
   font-size: 15px;
   border-radius: 22px;
-  cursor: url('cursor.png'), auto;
+  cursor: url('cursor.png'),auto;
 }
 .delete-button{
   background : rgb(243, 130, 130);
@@ -49,7 +49,7 @@ padding:0 ;
   color : white;
   padding: 10px 0px ;
   border-radius: 22px;
-  cursor: url('cursor.png');
+  cursor: url('cursor.png'),auto;
 }
 .todo-grid,
 .todo-input-grid{
