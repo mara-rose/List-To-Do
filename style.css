@@ -7,24 +7,29 @@ body{
   background-color: pink;
   display: flex;
   justify-content: center;
+  flex-direction: column;
   align-items: center;
+  gap: 30px;
   min-height: 600px;
 }
 p{
   margin: 0;
-  text-align: center;
+  display: flex;
+  justify-content: center;
   padding-top: 5px;
   font-size: 23px;
   color: rgb(243, 137, 154);
 }
 .card {
+  display: flex;
+  flex-direction: column;
   border: 2px solid rgb(253, 133, 203);
   border-radius: 10px;
+  overflow: hidden;
 }
 .nav-bar{
 background-color: rgb(253, 239, 195);
-align-items: start;
-height: 40px;
+padding:0 ;
 }
 .nav-list{
   background-color: rgb(255, 239, 239);
@@ -62,9 +67,11 @@ height: 40px;
 }
 
 .name-input, 
-.date-input{
-    font-family : 'Share Tech';
+.date-input,
+.time-input{
+ font-family : 'Share Tech';
  font-size: 15px;
  padding: 6px;
-cursor: url('cursor.png'), auto;
+ border: none;
+ cursor: url('cursor.png'), auto;
 }

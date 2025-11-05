@@ -1,3 +1,4 @@
+// instead use two array we use one array with objects
 const todoList = [];
 
 function AddToDo() {
@@ -7,13 +8,27 @@ function AddToDo() {
   const date = dateInputElement.value;
   const timeInputElement = document.querySelector('.js-time-input');
   const time = timeInputElement.value;
-  todoList.push({
-    name: name,
-    dueDate: date,
-    time: time
-  });
-  inputElement.value = '';
-  renderTodoList();
+  if (name && date && time) {
+    todoList.push({
+      name: name,
+      dueDate: date,
+      time: time
+    });
+    inputElement.value = '';
+    renderTodoList();
+    document.querySelector('.js-note-input').innerHTML = '';
+
+  } else {
+    if (!name) {
+      document.querySelector('.js-note-input').innerHTML = 'Your input list is empty !! . Put Something';
+
+    } else if (!date) {
+      document.querySelector('.js-note-input').innerHTML = 'Your date of your list is empty . Put something';
+    }
+    else {
+      document.querySelector('.js-note-input').innerHTML = 'You time of your list is empty . Put something';
+    }
+  }
 }
 function renderTodoList() {
   let todoHTML = '';
