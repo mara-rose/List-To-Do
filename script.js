@@ -1,6 +1,5 @@
 // instead use two array we use one array with objects
 let todoList = JSON.parse(localStorage.getItem('list')) || [];
-
 function AddToDo() {
   const inputElement = document.querySelector('.js-name-input');
   const name = inputElement.value;
@@ -50,6 +49,15 @@ function renderTodoList() {
     `;
     todoHTML += html;
   }
+  document.querySelector('.js-bottom-row').innerHTML = `
+    <p>You have ${todoList.length} items.</p>
+    <button class="delete-all-button" onclick="
+    todoList.splice(0,todoList.length);
+    renderTodoList();
+    localStorage.setItem('list', JSON.stringify(todoList));
+    ">Delete</button>
+  `;
+
   document.querySelector('.js-to-list').innerHTML = todoHTML;
 }
 renderTodoList();

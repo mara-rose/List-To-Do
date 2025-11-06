@@ -75,3 +75,16 @@ padding:0;
  border: none;
  cursor: url('cursor.png'), auto;
 }
+.bottom-row{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 10px; 
+}
+.delete-all-button{
+  background : rgb(243, 130, 130);
+  border: none;
+  color : white;
+  padding: 10px 30px ;
+  border-radius: 22px;
+}
