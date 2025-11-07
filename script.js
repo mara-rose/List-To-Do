@@ -32,8 +32,7 @@ function AddToDo() {
 }
 function renderTodoList() {
   let todoHTML = '';
-  for (let i = 0; i < todoList.length; i++) {
-    const todoObject = todoList[i];
+  todoList.forEach(function (todoObject, i) {
     const { name } = todoObject;
     const dueDate = todoObject.dueDate;
     const time = todoObject.time;
@@ -48,7 +47,7 @@ function renderTodoList() {
     ">Delete</button>
     `;
     todoHTML += html;
-  }
+  });
   document.querySelector('.js-bottom-row').innerHTML = `
     <p>You have ${todoList.length} items.</p>
     <button class="delete-all-button" onclick="
