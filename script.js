@@ -1,5 +1,10 @@
 // instead use two array we use one array with objects
 let todoList = JSON.parse(localStorage.getItem('list')) || [];
+
+document.querySelector('.js-add-button')
+  .addEventListener('click', () => {
+    AddToDo();
+  });
 function AddToDo() {
   const inputElement = document.querySelector('.js-name-input');
   const name = inputElement.value;
@@ -29,10 +34,10 @@ function AddToDo() {
       document.querySelector('.js-note-input').innerHTML = 'You time of your list is empty . Put something';
     }
   }
-}
+};
 function renderTodoList() {
   let todoHTML = '';
-  todoList.forEach(function (todoObject, i) {
+  todoList.forEach((todoObject, i) => {
     const { name } = todoObject;
     const dueDate = todoObject.dueDate;
     const time = todoObject.time;
@@ -58,5 +63,5 @@ function renderTodoList() {
   `;
 
   document.querySelector('.js-to-list').innerHTML = todoHTML;
-}
+};
 renderTodoList();
