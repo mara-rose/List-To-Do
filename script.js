@@ -64,6 +64,11 @@ function renderTodoList() {
     )
   });
 
+  document.body.addEventListener('keydown', (event)=>{
+    if(event.key==='Enter'){
+      AddToDo();
+    }
+  });
 
   document.querySelector('.js-bottom-row').innerHTML = `
     <p>You have ${todoList.length} items.</p>
