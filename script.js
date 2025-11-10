@@ -22,7 +22,6 @@ function AddToDo() {
     renderTodoList();
     document.querySelector('.js-note-input').innerHTML = '';
     localStorage.setItem('list', JSON.stringify(todoList));
-
   } else {
     if (!name) {
       document.querySelector('.js-note-input').innerHTML = 'Your input list is empty !! . Put Something';
@@ -35,6 +34,7 @@ function AddToDo() {
     }
   }
 };
+
 function renderTodoList() {
   let todoHTML = '';
   todoList.forEach((todoObject, i) => {
@@ -45,23 +45,35 @@ function renderTodoList() {
     <div>${name}</div>
     <div>${dueDate}</div>
     <div>${time}</div>
-    <button class="delete-button" onclick="
-    todoList.splice(${i},1);
-    renderTodoList();
-    localStorage.setItem('list', JSON.stringify(todoList));
-    ">Delete</button>
+    <button class="delete-button js-delete-button">Delete</button>
     `;
+
     todoHTML += html;
   });
-  document.querySelector('.js-bottom-row').innerHTML = `
-    <p>You have ${todoList.length} items.</p>
-    <button class="delete-all-button" onclick="
-    todoList.splice(0,todoList.length);
+  document.querySelector('.js-to-list').innerHTML = todoHTML;
+  
+
+ document.querySelectorAll('.js-delete-button')
+  .forEach((deleteButton,i)=>{
+    deleteButton.addEventListener('click',
+      ()=>{
+    todoList.splice(i,1);
     renderTodoList();
     localStorage.setItem('list', JSON.stringify(todoList));
-    ">Delete</button>
-  `;
+      }
+    )
+  });
 
-  document.querySelector('.js-to-list').innerHTML = todoHTML;
+
+  document.querySelector('.js-bottom-row').innerHTML = `
+    <p>You have ${todoList.length} items.</p>
+    <button class="delete-all-button js-all-delete">Delete</button>`;
+
+    document.querySelector('.js-all-delete').addEventListener('click',
+    ()=>{
+      todoList.splice(0,todoList.length);
+    renderTodoList();
+    localStorage.setItem('list', JSON.stringify(todoList));})
+
 };
 renderTodoList();
