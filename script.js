@@ -5,6 +5,20 @@ document.querySelector('.js-add-button')
   .addEventListener('click', () => {
     AddToDo();
   });
+
+const listInput = document.querySelector('.js-name-input');
+const dateInput = document.querySelector('.js-date-input');
+const timeInput = document.querySelector('.js-time-input');
+
+[listInput, dateInput, timeInput].forEach((value) => {
+  value.addEventListener('keydown', (event) => {
+    if (event.key === 'Enter') {
+      AddToDo();
+    }
+  })
+});
+
+
 function AddToDo() {
   const inputElement = document.querySelector('.js-name-input');
   const name = inputElement.value;
@@ -18,19 +32,19 @@ function AddToDo() {
       dueDate: date,
       time: time
     });
+    document.querySelector('.js-note-input').innerHTML = '';
     inputElement.value = '';
     renderTodoList();
-    document.querySelector('.js-note-input').innerHTML = '';
     localStorage.setItem('list', JSON.stringify(todoList));
   } else {
-    if (!name) {
+    if (name === '') {
       document.querySelector('.js-note-input').innerHTML = 'Your input list is empty !! . Put Something';
 
-    } else if (!date) {
+    } else if (date === '') {
       document.querySelector('.js-note-input').innerHTML = 'Your date of your list is empty . Put something';
     }
-    else {
-      document.querySelector('.js-note-input').innerHTML = 'You time of your list is empty . Put something';
+    else if (time === '') {
+      document.querySelector('.js-note-input').innerHTML = 'Your time of your list is empty . Put something';
     }
   }
 };
@@ -47,38 +61,33 @@ function renderTodoList() {
     <div>${time}</div>
     <button class="delete-button js-delete-button">Delete</button>
     `;
-
     todoHTML += html;
   });
   document.querySelector('.js-to-list').innerHTML = todoHTML;
-  
 
- document.querySelectorAll('.js-delete-button')
-  .forEach((deleteButton,i)=>{
-    deleteButton.addEventListener('click',
-      ()=>{
-    todoList.splice(i,1);
-    renderTodoList();
-    localStorage.setItem('list', JSON.stringify(todoList));
-      }
-    )
-  });
 
-  document.body.addEventListener('keydown', (event)=>{
-    if(event.key==='Enter'){
-      AddToDo();
-    }
-  });
+  document.querySelectorAll('.js-delete-button')
+    .forEach((deleteButton, i) => {
+      deleteButton.addEventListener('click',
+        () => {
+          todoList.splice(i, 1);
+          renderTodoList();
+          localStorage.setItem('list', JSON.stringify(todoList));
+        }
+      )
+    });
+
 
   document.querySelector('.js-bottom-row').innerHTML = `
     <p>You have ${todoList.length} items.</p>
     <button class="delete-all-button js-all-delete">Delete</button>`;
 
-    document.querySelector('.js-all-delete').addEventListener('click',
-    ()=>{
-      todoList.splice(0,todoList.length);
-    renderTodoList();
-    localStorage.setItem('list', JSON.stringify(todoList));})
+  document.querySelector('.js-all-delete').addEventListener('click',
+    () => {
+      todoList.splice(0, todoList.length);
+      renderTodoList();
+      localStorage.setItem('list', JSON.stringify(todoList));
+    })
 
 };
 renderTodoList();
