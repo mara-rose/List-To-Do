@@ -1,9 +1,8 @@
-html{
-  cursor: url('img/cursor.png'), auto;
-
+html {
+  cursor: url("img/cursor.png"), auto;
 }
-body{
-  font-family : 'Share Tech';
+body {
+  font-family: "Share Tech";
   background-color: pink;
   display: flex;
   justify-content: center;
@@ -12,14 +11,14 @@ body{
   gap: 30px;
   min-height: 600px;
 }
-p{
+p {
   margin: 0;
   display: flex;
   justify-content: center;
   font-size: 24px;
   color: rgb(243, 137, 154);
 }
-.title{
+.title {
   font-family: "Changa One";
   font-size: 40px;
 }
@@ -30,7 +29,7 @@ p{
   border-radius: 10px;
   overflow: hidden;
 }
-.nav-bar{
+.nav-bar {
   display: flex;
   justify-content: start;
   align-items: center;
@@ -39,66 +38,72 @@ p{
   padding-bottom: 10px;
 }
 
-.gif-img{
- width: 52px;
- margin-left: 10px;
- margin-right: 15px;
+.gif-img {
+  width: 52px;
+  margin-left: 10px;
+  margin-right: 15px;
 }
-.nav-list{
+.nav-list {
   background-color: rgb(255, 239, 239);
   padding: 10px 10px 10px 10px;
 }
-.add-button{
+.add-button {
   background-color: rgb(108, 255, 108);
-  font-family : 'Share Tech';
+  font-family: "Share Tech";
   color: white;
-  border : none;
+  border: none;
   font-size: 18px;
   border-radius: 22px;
-  cursor: url('img/cursor.png'), auto;
+  cursor: url("img/cursor.png"), auto;
 }
 .delete-button,
-.delete-all-button{
-  background : rgb(243, 130, 130);
-  font-family : 'Share Tech';
+.delete-all-button {
+  background: rgb(243, 130, 130);
+  font-family: "Share Tech";
   border: none;
-  color : white;
-  padding: 10px 0px ;
+  color: white;
+  padding: 10px 0px;
   font-size: 18px;
   border-radius: 22px;
-  cursor: url('img/cursor.png'), auto;
+  cursor: url("img/cursor.png"), auto;
 }
 .todo-grid,
-.todo-input-grid{
-  display : grid;
+.todo-input-grid {
+  display: grid;
   grid-template-columns: 200px 150px 150px 100px;
-  column-gap:15px;
-  row-gap : 10px;
+  column-gap: 15px;
+  row-gap: 10px;
   align-items: center;
 }
 
-.todo-input-grid{
- align-items: stretch;
- max-height: 300px;
- overflow-y: auto;
+.todo-input-grid {
+  align-items: stretch;
+  max-height: 300px;
+  overflow-y: auto;
 }
 
-.name-input, 
+.name-input,
 .date-input,
-.time-input{
- font-family : 'Share Tech';
- font-size: 15px;
- padding: 6px;
- border: none;
-  cursor: url('img/cursor.png'), auto;
+.time-input {
+  font-family: "Share Tech";
+  font-size: 15px;
+  padding: 6px;
+  border: none;
+
+  cursor: url("img/cursor.png"), auto;
 }
-.bottom-row{
+.name-input:focus,
+.date-input:focus,
+.time-input:focus {
+  outline: none;
+}
+.bottom-row {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-top: 10px; 
+  margin-top: 10px;
 }
-.delete-all-button{
-  padding: 10px 26px ;
+.delete-all-button {
+  padding: 10px 26px;
   border-radius: 22px;
 }
