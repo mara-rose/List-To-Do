@@ -4,35 +4,38 @@ html {
 body {
   font-family: "Share Tech";
   background-color: pink;
+  min-height: 90vh;
   display: flex;
-  justify-content: center;
   flex-direction: column;
+  gap: 10px;
+  justify-content: center;
   align-items: center;
-  gap: 30px;
-  min-height: 600px;
+  background-size: cover;
 }
 p {
   margin: 0;
   display: flex;
   justify-content: center;
-  font-size: 24px;
-  color: rgb(243, 137, 154);
+  font-size: clamp(14px, 4vw, 26px);
+  color: rgb(212, 128, 142);
 }
 .title {
   font-family: "Changa One";
-  font-size: 40px;
+  font-size: clamp(25px, 4vw, 30px);
 }
 .card {
   display: flex;
   flex-direction: column;
   border: 2px solid rgb(253, 133, 203);
   border-radius: 10px;
+  align-items: center;
   overflow: hidden;
 }
 .nav-bar {
   display: flex;
   justify-content: start;
   align-items: center;
+  width: 100%;
   background-color: rgb(253, 239, 195);
   padding-top: 10px;
   padding-bottom: 10px;
@@ -52,7 +55,7 @@ p {
   font-family: "Share Tech";
   color: white;
   border: none;
-  font-size: 18px;
+  font-size: clamp(15px, 3vw, 15px);
   border-radius: 22px;
   cursor: url("img/cursor.png"), auto;
 }
@@ -62,23 +65,23 @@ p {
   font-family: "Share Tech";
   border: none;
   color: white;
-  padding: 10px 0px;
-  font-size: 18px;
-  border-radius: 22px;
+  font-size: clamp(15px, 3vw, 15px);
+  padding: 5px 0;
+  border-radius: 15px;
   cursor: url("img/cursor.png"), auto;
 }
+
 .todo-grid,
 .todo-input-grid {
   display: grid;
-  grid-template-columns: 200px 150px 150px 100px;
-  column-gap: 15px;
-  row-gap: 10px;
-  align-items: center;
+  grid-template-columns: 1fr 1fr 1fr 90px;
+  column-gap: 1%;
+  row-gap: 14px;
 }
 
 .todo-input-grid {
-  align-items: stretch;
   max-height: 300px;
+  margin-bottom: 15px;
   overflow-y: auto;
 }
 
@@ -89,7 +92,6 @@ p {
   font-size: 15px;
   padding: 6px;
   border: none;
-
   cursor: url("img/cursor.png"), auto;
 }
 .name-input:focus,
@@ -104,6 +106,21 @@ p {
   margin-top: 10px;
 }
 .delete-all-button {
-  padding: 10px 26px;
+  padding: 6px 26px;
   border-radius: 22px;
+}
+@media (max-width: 600px) {
+  .gif-img {
+    width: 42px;
+  }
+  .todo-input-grid {
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+  }
+  .todo-grid {
+    grid-template-columns: 167px 126px 74px 80px;
+  }
+  .delete-all-button {
+    padding: 6px 21px;
+    border-radius: 22px;
+  }
 }
